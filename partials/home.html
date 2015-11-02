@@ -1,0 +1,23 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <form class="form-group col-lg-4" ng-submit='findMovie(value)'>
+      <label class="control-label" for="inputDefault"></label>
+      <input type="text"class="form-control" id="inputDefault" ng-model="movie">
+      <button class="btn btn-primary btn-lg" ng-click="value ='movie'"type="submit">Find Movies</button>
+      <button class="btn btn-primary btn-lg" ng-click="value ='series'"type="submit">Find Series</button>
+      <button class="btn btn-primary btn-lg" ng-click="value ='episode'"type="submit">Find Episodes</button>
+    </form>
+  </div>
+</div>
+
+<div class='container-fluid'>
+  <div class='row'>
+      <div id="movie" class="col-lg-4" ng-repeat="result in results">
+        <h4>{{ result.Title }}</h4>
+        <p>{{ result.Year }}</p>
+        <a href="/#/{{ result.imdbID }}/show">
+          <p><img id="poster" ng-src="{{ result.Poster }}"></p>
+        </a>
+      </div>
+  </div>
+</div>

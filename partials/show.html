@@ -1,0 +1,47 @@
+<div class="jumbotron selected-movie">
+  <h1 id="plot">{{ uniqueMovie.Title }}</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <p id="plot">{{ uniqueMovie.Plot }}</p>
+      </div>
+      <div class="col-lg-2 col-lg-offset-2">
+        <img ng-src="{{ uniqueMovie.Poster }}" />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- movie data -->
+<input id="rotten-tomato-data"type="checkbox" ng-click="rottentTomatoes = !rottenTomatoes"ng-model='rottenTomatoes'>Include Rotten Tomoates rating<br/>
+<div id="show-page-lists"class="list-group container-fluid">
+  <div class="row">
+<!-- movie data -->
+    <div class="col-lg-6 col-lg-offset-0">
+      <h3 class="list-group-item active">
+        Movie Stats</h3>
+      <p class="list-group-item"><b>Rating:</b> {{ uniqueMovie.imdbRating }}</p>
+      <p class="list-group-item"><b>Year: </b> {{ uniqueMovie.Year }}</p>
+      <p class="list-group-item"><b></b>  {{ uniqueMovie.Released }}</p>
+      <p class="list-group-item"><b>Runtime:</b>  {{ uniqueMovie.Runtime }}</p>
+      <p class="list-group-item"><b>Genre: </b> {{ uniqueMovie.Genre }}</p>
+      <p class="list-group-item"><b>Written by:</b>  {{ uniqueMovie.Writer }}</p>
+      <p class="list-group-item"><b>Actors: </b> {{ uniqueMovie.Actors }}</p>
+      <p class="list-group-item"><b>Awards: </b> {{ uniqueMovie.Awards }}</p>
+    </div>
+<!-- tomato data -->
+    <div ng-show="rottenTomatoes" class="col-lg-6 col-lg-offset-0">
+      <h3 class="list-group-item active">
+      Rotten Tomato Ratings</h3>
+      <p class="list-group-item"><b>Tomato Consensus:</b> {{ uniqueMovie.tomatoConsensus }}</p>
+      <p class="list-group-item"><b>Review: </b>{{ uniqueMovie.tomatoFresh }}</p>
+      <p class="list-group-item"><b>Tomato Meter:b</b>{{ uniqueMovie.tomatoMeter }}</p>
+      <p class="list-group-item"><b>Tomato Rating: </b>{{ uniqueMovie.tomatoRating }}</p>
+      <p class="list-group-item"><b>Tomato Reviews: </b>{{ uniqueMovie.tomatoReviews }}</p>
+      <p class="list-group-item"><b>User Meter: </b>{{ uniqueMovie.tomatoUserMeter }}</p>
+      <p class="list-group-item"><b>User Rating: </b>{{ uniqueMovie.tomatoUserRating }}</p>
+      <p class="list-group-item"><b>User Reviews: </b>{{ uniqueMovie.tomatoUserReviews }}</p>
+    </div>
+  </div>
+</div>
+
+
